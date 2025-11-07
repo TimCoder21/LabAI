@@ -15,7 +15,7 @@ rood_median = df['RoomService'].median()
 age_median = df['Age'].median()
 food_median = df['FoodCourt'].median()
 shopping_median = df['ShoppingMall'].median()
-vip_mean = df['VIP'].mean()
+vip_mode = df['VIP'].mode()[0]
 spa_median = df['Spa'].median()
 vrdeck_median = df['VRDeck'].median()
 cabin_mode = df['Cabin'].mode()[0]
@@ -33,7 +33,7 @@ df.fillna({'RoomService': rood_median}, inplace=True)
 df.fillna({'Age':age_median}, inplace=True)
 df.fillna({'ShoppingMall': shopping_median}, inplace=True)
 df.fillna({'FoodCourt':food_median}, inplace=True)
-df.fillna({'VIP':vip_mean}, inplace=True)
+df.fillna({'VIP':vip_mode}, inplace=True)
 df.fillna({'Spa':spa_median}, inplace=True)
 df.fillna({'VRDeck':vrdeck_median}, inplace=True)
 
