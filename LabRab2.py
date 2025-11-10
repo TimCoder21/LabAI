@@ -13,6 +13,7 @@ import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 
 df = pd.read_csv("processed_titanic.csv")
+
 X = df[['PassengerId']]
 y = df['Age']
 
