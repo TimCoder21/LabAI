@@ -24,6 +24,7 @@ sleep_mode = df['CryoSleep'].mode()[0]
 destination_mode = df['Destination'].mode()[0]
 name_mode = df['Name'].mode()[0]
 
+
 df.fillna({'Cabin': cabin_mode}, inplace=True)
 df.fillna({'HomePlanet': planet_mode}, inplace=True)
 df.fillna({'CryoSleep': sleep_mode}, inplace=True)
