@@ -20,13 +20,13 @@ spa_median = df['Spa'].median()
 vrdeck_median = df['VRDeck'].median()
 cabin_mode = df['Cabin'].mode()[0]
 planet_mode = df['HomePlanet'].mode()[0]
-sleep_mean = df['CryoSleep'].mean
+sleep_mode = df['CryoSleep'].mode()[0]
 destination_mode = df['Destination'].mode()[0]
 name_mode = df['Name'].mode()[0]
 
 df.fillna({'Cabin': cabin_mode}, inplace=True)
 df.fillna({'HomePlanet': planet_mode}, inplace=True)
-df.fillna({'CryoSleep': sleep_mean}, inplace=True)
+df.fillna({'CryoSleep': sleep_mode}, inplace=True)
 df.fillna({'Destination': destination_mode}, inplace=True)
 df.fillna({'Name': name_mode}, inplace=True)
 df.fillna({'RoomService': rood_median}, inplace=True)
