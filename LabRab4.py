@@ -47,6 +47,6 @@ plt.xlabel('FPR')
 
 ax.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r', label='Chance')
 
-ax.set_title('Сравнение ROC-кривых')
+ax.set_title('ROC-кривые')
 plt.show()
 
