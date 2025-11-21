@@ -4,15 +4,22 @@ from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
 
 # Загрузка вашего датасета
-# data = pd.read_csv('your_dataset.csv')
+df = pd.read_csv('processed_titanic.csv')
+df2 = pd.read_csv('processed_apple.csv')
 
-# Разделение на признаки (X) и целевую переменную (y)
-# X = data.drop('target', axis=1)
-# y = data['target']
+X = df[['Age']]
+y = df['Transported']
 
-# Для примера, создадим синтетические данные
-from sklearn.datasets import make_classification
-X, y = make_classification(n_samples=1000, n_features=20, n_informative=15, n_redundant=5, random_state=42)
-
-# Разделение на обучающую и тестовую выборки
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+rf_model = RandomForestClassifier(oob_score=True,random_state=42)
+rf_model.fit(X_train, y_train)
+
+
+y_pred_rf = rf_model.predict(X_test)
+y_pred_proba_rf = rf_model.predict_proba(X_test)[:, 1]
+
+print("OOB Score: ",rf_model.oob_score_)
+print("Test Accuracy: ",accuracy_score(y_test, y_pred_rf))
+print("Test ROC-AUC: " ,roc_auc_score(y_test, y_pred_proba_rf))
+print(classification_report(y_test, y_pred_rf))
