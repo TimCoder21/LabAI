@@ -40,7 +40,7 @@ RocCurveDisplay.from_estimator(gb_model, X_test, y_test, ax=ax, name='Gradient B
 plt.ylabel('TPR')
 plt.xlabel('FPR')
 
-ax.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r')
+ax.plot([0,1], [0, 1], linestyle='--', lw=2, color='r')
 
 ax.set_title('ROC-кривые')
 plt.show()
