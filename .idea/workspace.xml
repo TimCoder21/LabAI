@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a501e997-7581-48bc-af4e-fe06cf386c2d" name="Changes" comment="классификация методом градиентного бустинга и AdaBoost">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LabRab4.py" beforeDir="false" afterPath="$PROJECT_DIR$/LabRab4.py" afterDir="false" />
-    </list>
+    <list default="true" id="a501e997-7581-48bc-af4e-fe06cf386c2d" name="Changes" comment="еще правка мелкая" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Lab3" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -39,7 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Lab4"
+    "git-widget-placeholder": "#4 on Lab4"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -73,7 +75,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763754431456</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="еще правка мелкая">
+      <option name="closed" value="true" />
+      <created>1763758342233</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763758342233</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,6 +100,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="классификация методом деревьев" />
     <MESSAGE value="классификация методом градиентного бустинга и AdaBoost" />
-    <option name="LAST_COMMIT_MESSAGE" value="классификация методом градиентного бустинга и AdaBoost" />
+    <MESSAGE value="еще правка мелкая" />
+    <option name="LAST_COMMIT_MESSAGE" value="еще правка мелкая" />
   </component>
 </project>

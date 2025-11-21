@@ -5,7 +5,6 @@ from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, Gradien
 import matplotlib.pyplot as plt
 
 
-# Загрузка вашего датасета
 df = pd.read_csv('processed_titanic.csv')
 df2 = pd.read_csv('processed_apple.csv')
 
@@ -37,7 +36,6 @@ print("Gradient Boosting")
 print("Test Accuracy: ", accuracy_score(y_test, y_pred_gb))
 
 fig, ax = plt.subplots(figsize=(8, 6))
-
 
 RocCurveDisplay.from_estimator(rf_model, X_test, y_test, ax=ax, name='Random Forest')
 RocCurveDisplay.from_estimator(ada_model, X_test, y_test, ax=ax, name='AdaBoost')
