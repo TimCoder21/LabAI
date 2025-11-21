@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, RocCurveDisplay
+from sklearn.metrics import accuracy_score, RocCurveDisplay, roc_curve
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
 import matplotlib.pyplot as plt
 
@@ -36,4 +36,17 @@ y_pred_proba_gb = gb_model.predict_proba(X_test)[:, 1]
 print("Gradient Boosting")
 print("Test Accuracy: ", accuracy_score(y_test, y_pred_gb))
 
+fig, ax = plt.subplots(figsize=(8, 6))
+
+
+RocCurveDisplay.from_estimator(rf_model, X_test, y_test, ax=ax, name='Random Forest')
+RocCurveDisplay.from_estimator(ada_model, X_test, y_test, ax=ax, name='AdaBoost')
+RocCurveDisplay.from_estimator(gb_model, X_test, y_test, ax=ax, name='Gradient Boosting')
+plt.ylabel('TPR')
+plt.xlabel('FPR')
+
+ax.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r', label='Chance')
+
+ax.set_title('Сравнение ROC-кривых')
+plt.show()
 
