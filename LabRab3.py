@@ -6,9 +6,11 @@ from sklearn.metrics import auc
 from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
 
 df = pd.read_csv("processed_titanic.csv")
+df2 = pd.read_csv("processed_apple.csv")
 
-X = df[['PassengerId']]
-y = df['Age']
+
+X = df2[['Adj Close']]
+y = df2['Date']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
 
@@ -24,8 +26,8 @@ mae = mean_absolute_error(y_test, y_pred)
 print("MSE: ", mse)
 print("MAE: ", mae)
 
-X1 = df[['PassengerId']]
-y1 = df['VIP']
+X1 = df[['Age']]
+y1 = df['Transported']
 
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
 
