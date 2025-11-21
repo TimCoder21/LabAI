@@ -5,26 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a501e997-7581-48bc-af4e-fe06cf386c2d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/LabAI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LabRab1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LabRab2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/processed_titanic.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/.ipynb_checkpoints/sample_submission-checkpoint.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/.ipynb_checkpoints/test-checkpoint.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/.ipynb_checkpoints/train-checkpoint.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/sample_submission.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/train.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LabRab4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "Lab4"
   }
 }]]></component>
   <component name="SharedIndexes">
