@@ -22,18 +22,16 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_
 X_test, X_val, y_test, y_val = train_test_split(X_test, y_test, test_size=0.4, random_state=42)
 
 linear_model = LinearRegression()
-
 linear_model.fit(X_train, y_train)
-
 y_pred_test = linear_model.predict(X_test)
 
 print("Оценка регресии")
 MSE = mean_squared_error(y_test, y_pred_test)
-print(MSE)
+print("MSE: ", MSE)
 RMSE = root_mean_squared_error(y_test, y_pred_test)
-print(RMSE)
+print("RMSE: ", RMSE)
 MAE = mean_absolute_error(y_test, y_pred_test)
-print(MAE)
+print("MAE: ", MAE)
 
 X1 = df[['Age']]
 y1 = df['Transported']
@@ -41,13 +39,10 @@ y1 = df['Transported']
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
 X1_test, X1_val, y1_test, y1_val = train_test_split(X1_test, y1_test, test_size=0.4, random_state=42)
 
-scaler = StandardScaler()
-X1_train_scaled = scaler.fit_transform(X1_train)
-X1_test_scaled = scaler.transform(X1_test)
 
 logreg_model = LogisticRegression(max_iter=1000, random_state=42)
-logreg_model.fit(X1_train_scaled, y1_train)
-y1_pred_test = logreg_model.predict(X1_test_scaled)
+logreg_model.fit(X1_train, y1_train)
+y1_pred_test = logreg_model.predict(X1_test)
 
 accuracy = accuracy_score(y1_test, y1_pred_test)
 print("Точность: " , accuracy)
