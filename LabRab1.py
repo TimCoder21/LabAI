@@ -34,17 +34,16 @@ df.fillna({'VIP':vip_mode}, inplace=True)
 nan_matrix = df.isnull()
 print(nan_matrix.sum())
 
-df2['Date'] = pd.to_datetime(df2['Date'])  # Сначала в datetime
-
-df2['Date'] = df2['Date'].astype(int)
+df2['Date'] = pd.to_datetime(df2['Date'])
+df2['Date'] = df2['Date'].astype(int)/1000000000
 
 scaler = MinMaxScaler()
 df['Age'] = scaler.fit_transform(df[['Age']])
 
-scaler = MinMaxScaler()
-df2['Adj Close'] = scaler.fit_transform(df2[['Adj Close']])
-scaler = MinMaxScaler()
-df2['Date'] = scaler.fit_transform(df2[['Date']])
+#scaler = MinMaxScaler()
+#df2['Adj Close'] = scaler.fit_transform(df2[['Adj Close']])
+#scaler = MinMaxScaler()
+#df2['Date'] = scaler.fit_transform(df2[['Date']])
 
 df = pd.get_dummies(df, columns=['HomePlanet'])
 
