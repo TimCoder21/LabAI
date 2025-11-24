@@ -22,7 +22,15 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_
 X_test, X_val, y_test, y_val = train_test_split(X_test, y_test, test_size=0.4, random_state=42)
 
 linear_model = LinearRegression()
+
+from sklearn.preprocessing import PolynomialFeatures
+n = 10
+poly_features = PolynomialFeatures(n)
+X_train = poly_features.fit_transform(X_train)
 linear_model.fit(X_train, y_train)
+
+X_test = poly_features.transform(X_test)
+
 y_pred_test = linear_model.predict(X_test)
 
 print("Оценка регресии")
