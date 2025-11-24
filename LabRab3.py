@@ -9,8 +9,8 @@ df = pd.read_csv("processed_titanic.csv")
 df2 = pd.read_csv("processed_apple.csv")
 
 
-X = df2[['Adj Close']]
-y = df2['Date']
+X = df2[['Date']]
+y = df2['Adj Close']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
 
