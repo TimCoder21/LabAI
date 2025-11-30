@@ -41,8 +41,26 @@ print("RMSE: ", RMSE)
 MAE = mean_absolute_error(y_test, y_pred_test)
 print("MAE: ", MAE)
 
-X1 = df[['Age']]
-y1 = df['Transported']
+from ucimlrepo import fetch_ucirepo
+
+# fetch dataset
+spambase = fetch_ucirepo(id=94)
+
+# data (as pandas dataframes)
+X1 = spambase.data.features
+y1 = spambase.data.targets
+
+# metadata
+print(spambase.metadata)
+
+# variable information
+print(spambase.variables)
+
+
+
+
+#X1 = df[['Age']]
+#y1 = df['Transported']
 
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
 X1_test, X1_val, y1_test, y1_val = train_test_split(X1_test, y1_test, test_size=0.4, random_state=42)
