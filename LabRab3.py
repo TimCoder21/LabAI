@@ -1,7 +1,7 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import roc_curve, mean_squared_error, mean_absolute_error
+from sklearn.metrics import roc_curve, mean_squared_error, mean_absolute_error, accuracy_score
 from sklearn.metrics import auc
 from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
 
@@ -26,8 +26,12 @@ mae = mean_absolute_error(y_test, y_pred)
 print("MSE: ", mse)
 print("MAE: ", mae)
 
-X1 = df[['Age']]
-y1 = df['Transported']
+from ucimlrepo import fetch_ucirepo
+spambase = fetch_ucirepo(id=94)
+# data (as pandas dataframes)
+X1 = spambase.data.features
+y1 = spambase.data.targets
+y1 = y1.values.ravel()
 
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
 
@@ -36,6 +40,7 @@ dt_classifier = DecisionTreeClassifier(max_depth=6,min_samples_split=10,min_samp
 dt_classifier.fit(X1_train, y1_train)
 
 y1_proba = dt_classifier.predict_proba(X1_test)
+
 
 fpr, tpr, thresholds = roc_curve(y1_test, y1_proba[:, 1])
 roc_auc = auc(fpr, tpr)
