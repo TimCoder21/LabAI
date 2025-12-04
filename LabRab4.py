@@ -5,11 +5,12 @@ from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, Gradien
 import matplotlib.pyplot as plt
 
 
-df = pd.read_csv('processed_titanic.csv')
-df2 = pd.read_csv('processed_apple.csv')
-
-X = df[['Age']]
-y = df['Transported']
+from ucimlrepo import fetch_ucirepo
+spambase = fetch_ucirepo(id=94)
+# data (as pandas dataframes)
+X = spambase.data.features
+y = spambase.data.targets
+y = y.values.ravel()
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
