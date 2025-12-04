@@ -24,7 +24,7 @@ mse = mean_squared_error(y_test, y_pred)
 mae = mean_absolute_error(y_test, y_pred)
 
 print("MSE: ", mse)
-print("MAE: ", mae)
+print("MAE: ", mae, '\n')
 
 from ucimlrepo import fetch_ucirepo
 spambase = fetch_ucirepo(id=94)
@@ -41,6 +41,9 @@ dt_classifier.fit(X1_train, y1_train)
 
 y1_proba = dt_classifier.predict_proba(X1_test)
 
+y1_pred_test = dt_classifier.predict(X1_test)
+accuracy = accuracy_score(y1_test, y1_pred_test)
+print("Точность: " , accuracy)
 
 fpr, tpr, thresholds = roc_curve(y1_test, y1_proba[:, 1])
 roc_auc = auc(fpr, tpr)
