@@ -64,6 +64,6 @@ print(df3.corr('kendall'))
 
 df.to_csv("processed_titanic.csv", index=False)
 df2.to_csv("processed_apple.csv", index=False)
-df3.to_csv("processed_Fish", index=False)
+df3.to_csv("processed_Fish.csv", index=False)
 
 
