@@ -63,7 +63,6 @@ df2.drop('Close', axis='columns', inplace= True)
 df2.drop('High', axis='columns', inplace= True)
 df2.drop('Low', axis='columns', inplace= True)
 df2.drop('Open', axis='columns', inplace= True)
-df2.drop('Volume', axis='columns', inplace= True)
 
 print(df.head(10))
 print(df2.head(10))
