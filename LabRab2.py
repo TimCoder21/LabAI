@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.metrics import root_mean_squared_error
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
@@ -10,7 +10,6 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import PolynomialFeatures
 
 df2 = pd.read_csv("processed_apple.csv")
@@ -41,6 +40,7 @@ print("RMSE: ", RMSE)
 MAE = mean_absolute_error(y_test, y_pred_test)
 print("MAE: ", MAE)
 
+print("R^2: ", r2_score(y_test, y_pred_test))
 from ucimlrepo import fetch_ucirepo
 
 spambase = fetch_ucirepo(id=94)
@@ -52,8 +52,8 @@ y1 = spambase.data.targets
 y1 = y1.values.ravel()
 
 print(spambase.metadata)
-
 print(spambase.variables)
+print(spambase.data)
 
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
 X1_test, X1_val, y1_test, y1_val = train_test_split(X1_test, y1_test, test_size=0.4, random_state=42)
@@ -75,6 +75,5 @@ plt.ylabel('True label')
 plt.xlabel('Predicted label')
 plt.tight_layout()
 plt.show()
-
 
 
