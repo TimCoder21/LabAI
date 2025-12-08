@@ -57,13 +57,7 @@ print(df3.corr('kendall'))
 #print(df.head(10))
 #print(df2.head(10))
 
-df3.drop('volatile acidity', axis='columns', inplace= True)
-df3.drop('residual sugar', axis='columns', inplace= True)
-df3.drop('chlorides', axis='columns', inplace= True)
-df3.drop('free sulfur dioxide', axis='columns', inplace= True)
-df3.drop('total sulfur dioxide', axis='columns', inplace= True)
-df3.drop('density', axis='columns', inplace= True)
-df3.drop('pH', axis='columns', inplace= True)
+
 
 df.to_csv("processed_titanic.csv", index=False)
 df2.to_csv("processed_apple.csv", index=False)
