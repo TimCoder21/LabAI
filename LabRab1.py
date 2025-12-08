@@ -5,34 +5,21 @@ from datetime import datetime
 
 df = pd.read_csv("spaceship-titanic/train.csv")
 df2 = pd.read_csv("apple_stock.csv")
-
-df.info()
+df3 = pd.read_csv("winequality-red.csv")
 df2.info()
-df.dtypes
-print(df.head(100))
-cols = df.columns
+df3.info()
 cols2 = df2.columns
 print(cols2)
-nan_matrix = df.isnull()
-print(nan_matrix.head(100))
-print(nan_matrix.sum())
+cols3 = df3.columns
+print(cols3)
 
 
 age_mean = df['Age'].mean()
 vip_mode = df['VIP'].mode()[0]
 planet_mode = df['HomePlanet'].mode()[0]
-
-
-
 df.fillna({'HomePlanet': planet_mode}, inplace=True)
-
 df.fillna({'Age':age_mean}, inplace=True)
-
 df.fillna({'VIP':vip_mode}, inplace=True)
-
-
-nan_matrix = df.isnull()
-print(nan_matrix.sum())
 
 df2['Date'] = pd.to_datetime(df2['Date'])
 df2['Date'] = df2['Date'].astype(int)/1000000000
@@ -64,10 +51,22 @@ df2.drop('High', axis='columns', inplace= True)
 df2.drop('Low', axis='columns', inplace= True)
 df2.drop('Open', axis='columns', inplace= True)
 
-print(df.head(10))
-print(df2.head(10))
+print(df3.corr('pearson'))
+print(df3.corr('spearman'))
+print(df3.corr('kendall'))
+#print(df.head(10))
+#print(df2.head(10))
+
+df3.drop('volatile acidity', axis='columns', inplace= True)
+df3.drop('residual sugar', axis='columns', inplace= True)
+df3.drop('chlorides', axis='columns', inplace= True)
+df3.drop('free sulfur dioxide', axis='columns', inplace= True)
+df3.drop('total sulfur dioxide', axis='columns', inplace= True)
+df3.drop('density', axis='columns', inplace= True)
+df3.drop('pH', axis='columns', inplace= True)
 
 df.to_csv("processed_titanic.csv", index=False)
 df2.to_csv("processed_apple.csv", index=False)
+df3.to_csv("processed_winequality-red.csv", index=False)
 
 
