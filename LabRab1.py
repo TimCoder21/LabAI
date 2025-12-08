@@ -5,7 +5,9 @@ from datetime import datetime
 
 df = pd.read_csv("spaceship-titanic/train.csv")
 df2 = pd.read_csv("apple_stock.csv")
-df3 = pd.read_csv("winequality-red.csv")
+df3 = pd.read_csv("Fish.csv")
+print('Shape of dataset= ', df.shape) # To get no of rows and columns
+df.head(5) # head(n) returns first n records only. Can also use sample(n) for random n record
 df2.info()
 df3.info()
 cols2 = df2.columns
@@ -51,6 +53,7 @@ df2.drop('High', axis='columns', inplace= True)
 df2.drop('Low', axis='columns', inplace= True)
 df2.drop('Open', axis='columns', inplace= True)
 
+df3.drop('Species', axis='columns', inplace= True)
 print(df3.corr('pearson'))
 print(df3.corr('spearman'))
 print(df3.corr('kendall'))
@@ -61,6 +64,6 @@ print(df3.corr('kendall'))
 
 df.to_csv("processed_titanic.csv", index=False)
 df2.to_csv("processed_apple.csv", index=False)
-df3.to_csv("processed_winequality-red.csv", index=False)
+df3.to_csv("processed_Fish", index=False)
 
 
