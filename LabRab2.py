@@ -7,28 +7,20 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import PolynomialFeatures
 
-df2 = pd.read_csv("processed_apple.csv")
+df2 = pd.read_csv("processed_winequality-red.csv")
 
-X = df2[['Date']]
-y = df2['Adj Close']
+X = df2.drop(['quality'], axis=1)
+y = df2['quality']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
 X_test, X_val, y_test, y_val = train_test_split(X_test, y_test, test_size=0.4, random_state=42)
 
 linear_model = LinearRegression()
-
-
-n = 10
-poly_features = PolynomialFeatures(n)
-X_train = poly_features.fit_transform(X_train)
 linear_model.fit(X_train, y_train)
-
-X_test = poly_features.transform(X_test)
 
 y_pred_test = linear_model.predict(X_test)
 
