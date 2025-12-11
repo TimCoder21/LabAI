@@ -6,14 +6,16 @@ from datetime import datetime
 df = pd.read_csv("spaceship-titanic/train.csv")
 df2 = pd.read_csv("apple_stock.csv")
 df3 = pd.read_csv("Fish.csv")
-df.head(5) # head(n) returns first n records only. Can also use sample(n) for random n record
-df2.info()
-df3.info()
-cols2 = df2.columns
-print(cols2)
-cols3 = df3.columns
-print(cols3)
+df4 = pd.read_csv("spambase.csv")
 
+df4.head()
+print(df4.head(100))
+df4.info()
+
+print(df4.isnull().sum())
+for col in df4.columns:
+    scaler = MinMaxScaler()
+    df4[col] = scaler.fit_transform(df4[[col]])
 
 age_mean = df['Age'].mean()
 vip_mode = df['VIP'].mode()[0]
@@ -61,6 +63,7 @@ print(df.corr('kendall'))
 
 
 
+df4.to_csv("processed_spambase.csv", index=False)
 df.to_csv("processed_titanic.csv", index=False)
 df2.to_csv("processed_apple.csv", index=False)
 df3.to_csv("processed_Fish.csv", index=False)
