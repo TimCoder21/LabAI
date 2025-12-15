@@ -36,6 +36,7 @@ df.drop('PassengerId', axis=1, inplace=True)
 X1 = df.drop(['Transported'], axis=1)
 y1 = df['Transported']
 
+
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
 X1_test, X1_val, y1_test, y1_val = train_test_split(X1_test, y1_test, test_size=0.4, random_state=42)
 
