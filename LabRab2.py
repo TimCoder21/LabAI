@@ -29,17 +29,12 @@ MAE = mean_absolute_error(y_test, y_pred_test)
 print("MAE: ", MAE)
 
 print("R^2: ", r2_score(y_test, y_pred_test))
-from ucimlrepo import fetch_ucirepo
 
-spambase = fetch_ucirepo(id=94)
 
-# data (as pandas dataframes)
-X1 = spambase.data.features
-y1 = spambase.data.targets
-
-print(spambase.metadata)
-print(spambase.variables)
-print(spambase.data)
+df = pd.read_csv("processed_titanic.csv")
+df.drop('PassengerId', axis=1, inplace=True)
+X1 = df.drop(['Transported'], axis=1)
+y1 = df['Transported']
 
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
 X1_test, X1_val, y1_test, y1_val = train_test_split(X1_test, y1_test, test_size=0.4, random_state=42)
