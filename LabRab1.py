@@ -17,12 +17,17 @@ for col in df4.columns:
     scaler = MinMaxScaler()
     df4[col] = scaler.fit_transform(df4[[col]])
 
+
 age_mean = df['Age'].mean()
 vip_mode = df['VIP'].mode()[0]
+sleep_mode = df['CryoSleep'].mode()[0]
+
 planet_mode = df['HomePlanet'].mode()[0]
 df.fillna({'HomePlanet': planet_mode}, inplace=True)
 df.fillna({'Age':age_mean}, inplace=True)
 df.fillna({'VIP':vip_mode}, inplace=True)
+df.fillna({'CryoSleep':sleep_mode}, inplace=True)
+
 
 df2['Date'] = pd.to_datetime(df2['Date'])
 df2['Date'] = df2['Date'].astype(int)/1000000000
@@ -41,13 +46,12 @@ df = pd.get_dummies(df, columns=['HomePlanet'])
 df.drop('VRDeck', axis='columns', inplace= True)
 df.drop('ShoppingMall', axis='columns', inplace= True)
 df.drop('FoodCourt', axis='columns', inplace= True)
-df.drop('CryoSleep', axis='columns', inplace= True)
 df.drop('Cabin', axis='columns', inplace= True)
 df.drop('RoomService', axis='columns', inplace= True)
 df.drop('Spa', axis='columns', inplace= True)
 df.drop('Destination', axis='columns', inplace= True)
 df.drop('Name', axis='columns', inplace= True)
-
+df.drop('VIP', axis='columns', inplace= True)
 
 df2.drop('Close', axis='columns', inplace= True)
 df2.drop('High', axis='columns', inplace= True)
