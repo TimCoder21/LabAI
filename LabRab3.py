@@ -6,11 +6,11 @@ from sklearn.metrics import auc
 from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
 
 df = pd.read_csv("processed_titanic.csv")
-df2 = pd.read_csv("processed_apple.csv")
+df2 = pd.read_csv("processed_Fish.csv")
 
 
-X = df2[['Date']]
-y = df2['Adj Close']
+X = df2[['Weight']]
+y = df2['Weight']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
 
@@ -26,12 +26,9 @@ mae = mean_absolute_error(y_test, y_pred)
 print("MSE: ", mse)
 print("MAE: ", mae, '\n')
 
-from ucimlrepo import fetch_ucirepo
-spambase = fetch_ucirepo(id=94)
-# data (as pandas dataframes)
-X1 = spambase.data.features
-y1 = spambase.data.targets
-y1 = y1.values.ravel()
+df.drop('PassengerId', axis=1, inplace=True)
+X1 = df.drop(['Transported'], axis=1)
+y1 = df['Transported']
 
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
 
