@@ -32,7 +32,8 @@ print("R^2: ", r2_score(y_test, y_pred_test))
 
 
 df = pd.read_csv("processed_titanic.csv")
-df.drop('PassengerId', axis=1, inplace=True)
+
+
 X1 = df.drop(['Transported'], axis=1)
 y1 = df['Transported']
 
