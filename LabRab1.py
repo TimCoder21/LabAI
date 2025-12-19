@@ -72,6 +72,11 @@ df2.drop('High', axis='columns', inplace= True)
 df2.drop('Low', axis='columns', inplace= True)
 df2.drop('Open', axis='columns', inplace= True)
 
+df.drop('PassengerId', axis=1, inplace=True)
+df.drop('HomePlanet_Earth', axis=1, inplace=True)
+df.drop('HomePlanet_Europa', axis=1, inplace=True)
+df.drop('HomePlanet_Mars', axis=1, inplace=True)
+
 df3.drop('Species', axis='columns', inplace= True)
 print(df.corr('pearson'))
 print(df.corr('spearman'))
