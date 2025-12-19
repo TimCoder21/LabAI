@@ -24,9 +24,9 @@ sleep_mode = df['CryoSleep'].mode()[0]
 
 planet_mode = df['HomePlanet'].mode()[0]
 df.fillna({'HomePlanet': planet_mode}, inplace=True)
-df.fillna({'Age':age_mean}, inplace=True)
-df.fillna({'VIP':vip_mode}, inplace=True)
-df.fillna({'CryoSleep':sleep_mode}, inplace=True)
+#df.fillna({'Age':age_mean}, inplace=True)
+#df.fillna({'VIP':vip_mode}, inplace=True)
+#df.fillna({'CryoSleep':sleep_mode}, inplace=True)
 
 
 df2['Date'] = pd.to_datetime(df2['Date'])
