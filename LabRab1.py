@@ -35,6 +35,20 @@ df2['Date'] = df2['Date'].astype(int)/1000000000
 scaler = MinMaxScaler()
 df['Age'] = scaler.fit_transform(df[['Age']])
 
+scaler = MinMaxScaler()
+df3['Length1'] = scaler.fit_transform(df3[['Length1']])
+scaler = MinMaxScaler()
+df3['Length2'] = scaler.fit_transform(df3[['Length2']])
+scaler = MinMaxScaler()
+df3['Length3'] = scaler.fit_transform(df3[['Length3']])
+scaler = MinMaxScaler()
+df3['Height'] = scaler.fit_transform(df3[['Height']])
+scaler = MinMaxScaler()
+df3['Weight'] = scaler.fit_transform(df3[['Weight']])
+scaler = MinMaxScaler()
+df3['Width'] = scaler.fit_transform(df3[['Width']])
+
+
 #scaler = MinMaxScaler()
 #df2['Adj Close'] = scaler.fit_transform(df2[['Adj Close']])
 #scaler = MinMaxScaler()
