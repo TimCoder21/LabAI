@@ -18,7 +18,7 @@ for col in df4.columns:
     df4[col] = scaler.fit_transform(df4[[col]])
 
 
-age_mean = df['Age'].mean()
+age_mean = df['Age'].median()
 vip_mode = df['VIP'].mode()[0]
 sleep_mode = df['CryoSleep'].mode()[0]
 
