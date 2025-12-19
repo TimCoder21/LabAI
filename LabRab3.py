@@ -26,7 +26,6 @@ mae = mean_absolute_error(y_test, y_pred)
 print("MSE: ", mse)
 print("MAE: ", mae, '\n')
 
-df.drop('PassengerId', axis=1, inplace=True)
 X1 = df.drop(['Transported'], axis=1)
 y1 = df['Transported']
 
