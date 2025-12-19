@@ -31,7 +31,7 @@ print("MAE: ", MAE)
 print("R^2: ", r2_score(y_test, y_pred_test))
 
 
-df = pd.read_csv("diabetes.csv")
+df = pd.read_csv("processed_diadetes.csv")
 
 
 X1 = df.drop(['Outcome'], axis=1)
