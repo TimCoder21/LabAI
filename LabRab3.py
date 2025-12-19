@@ -6,7 +6,7 @@ from sklearn.metrics import roc_curve, mean_squared_error, mean_absolute_error, 
 from sklearn.metrics import auc
 from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
 
-df = pd.read_csv("processed_titanic.csv")
+df = pd.read_csv("processed_diadetes.csv")
 df2 = pd.read_csv("processed_Fish.csv")
 
 
@@ -27,8 +27,8 @@ mae = mean_absolute_error(y_test, y_pred)
 print("MSE: ", mse)
 print("MAE: ", mae, '\n')
 
-X1 = df.drop(['Transported'], axis=1)
-y1 = df['Transported']
+X1 = df.drop(['Outcome'], axis=1)
+y1 = df['Outcome']
 
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
 
