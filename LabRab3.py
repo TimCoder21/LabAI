@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from matplotlib import pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_curve, mean_squared_error, mean_absolute_error, accuracy_score
@@ -54,3 +55,4 @@ plt.ylabel('TPR')
 plt.title('ROC Curve')
 plt.grid(True)
 plt.show()
+
