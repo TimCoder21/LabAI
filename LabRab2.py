@@ -31,11 +31,11 @@ print("MAE: ", MAE)
 print("R^2: ", r2_score(y_test, y_pred_test))
 
 
-df = pd.read_csv("processed_titanic.csv")
+df = pd.read_csv("diabetes.csv")
 
 
-X1 = df.drop(['Transported'], axis=1)
-y1 = df['Transported']
+X1 = df.drop(['Outcome'], axis=1)
+y1 = df['Outcome']
 
 
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
