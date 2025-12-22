@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a501e997-7581-48bc-af4e-fe06cf386c2d" name="Changes" comment="очередной раз сменил датасет">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LabRab3.py" beforeDir="false" afterPath="$PROJECT_DIR$/LabRab3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

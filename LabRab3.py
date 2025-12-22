@@ -2,9 +2,9 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import roc_curve, mean_squared_error, mean_absolute_error, accuracy_score
+from sklearn.metrics import roc_curve, mean_squared_error, mean_absolute_error, accuracy_score, r2_score
 from sklearn.metrics import auc
-from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
+from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier, plot_tree
 
 df = pd.read_csv("processed_diadetes.csv")
 df2 = pd.read_csv("processed_Fish.csv")
@@ -25,8 +25,8 @@ mse = mean_squared_error(y_test, y_pred)
 mae = mean_absolute_error(y_test, y_pred)
 
 print("MSE: ", mse)
-print("MAE: ", mae, '\n')
-
+print("MAE: ", mae)
+print("R^2", r2_score(y_test, y_pred),  '\n')
 X1 = df.drop(['Outcome'], axis=1)
 y1 = df['Outcome']
 
@@ -44,8 +44,7 @@ print("Точность: " , accuracy)
 
 fpr, tpr, thresholds = roc_curve(y1_test, y1_proba[:, 1])
 roc_auc = auc(fpr, tpr)
-
-plt.figure(figsize=(8, 6))
+plt.figure(1, figsize=(8, 6))
 plt.plot(fpr, tpr, marker='o')
 plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
 plt.xlim([0.0, 1])
@@ -54,5 +53,7 @@ plt.xlabel('FPR')
 plt.ylabel('TPR')
 plt.title('ROC Curve')
 plt.grid(True)
-plt.show()
 
+plt.figure(2, figsize=(8, 6))
+plot_tree(dt_regressor)
+plt.show()
