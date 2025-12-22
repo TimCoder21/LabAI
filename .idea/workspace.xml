@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a501e997-7581-48bc-af4e-fe06cf386c2d" name="Changes" comment="очередной раз сменил датасет">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a501e997-7581-48bc-af4e-fe06cf386c2d" name="Changes" comment="добавил дерево решений">
       <change beforePath="$PROJECT_DIR$/LabRab3.py" beforeDir="false" afterPath="$PROJECT_DIR$/LabRab3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +62,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763757804949</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="добавил дерево решений">
+      <option name="closed" value="true" />
+      <created>1766409909807</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1766409909807</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,6 +86,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="правка регресии с новым датасетом" />
-    <option name="LAST_COMMIT_MESSAGE" value="правка регресии с новым датасетом" />
+    <MESSAGE value="добавил дерево решений" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил дерево решений" />
   </component>
 </project>

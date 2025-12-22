@@ -54,6 +54,6 @@ plt.ylabel('TPR')
 plt.title('ROC Curve')
 plt.grid(True)
 
-plt.figure(2, figsize=(8, 6))
+plt.figure(2, figsize=(14, 8))
 plot_tree(dt_regressor)
 plt.show()
