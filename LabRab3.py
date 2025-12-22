@@ -4,7 +4,8 @@ from matplotlib import pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_curve, mean_squared_error, mean_absolute_error, accuracy_score, r2_score
 from sklearn.metrics import auc
-from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier, plot_tree
+from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
+from sklearn import tree
 
 df = pd.read_csv("processed_diadetes.csv")
 df2 = pd.read_csv("processed_Fish.csv")
@@ -14,8 +15,10 @@ X = df2[['Weight']]
 y = df2['Weight']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
+DecisionTreeRegressor(criterion='gini')
 
-dt_regressor = DecisionTreeRegressor(max_depth=5,min_samples_split=10,min_samples_leaf=5,random_state=42)
+dt_regressor = DecisionTreeRegressor(max_depth=5,min_samples_split=10,min_samples_leaf=5,random_state=42 )
+dt_regressor.fit(X_train, y_train)
 
 dt_regressor.fit(X_train, y_train)
 
@@ -32,7 +35,7 @@ y1 = df['Outcome']
 
 X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.4, random_state=42)
 
-dt_classifier = DecisionTreeClassifier(max_depth=6,min_samples_split=10,min_samples_leaf=5,random_state=42)
+dt_classifier = DecisionTreeClassifier(max_depth=4,min_samples_split=10,min_samples_leaf=5,random_state=42)
 
 dt_classifier.fit(X1_train, y1_train)
 
@@ -55,5 +58,9 @@ plt.title('ROC Curve')
 plt.grid(True)
 
 plt.figure(2, figsize=(14, 8))
-plot_tree(dt_regressor)
+tree.plot_tree(dt_regressor)
+plt.title('Decision Tree Regressor')
+
+plt.figure(3, figsize=(14, 8))
+tree.plot_tree(dt_classifier)
 plt.show()
