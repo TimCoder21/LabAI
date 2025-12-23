@@ -7,6 +7,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.datasets import make_moons
 import matplotlib.pyplot as plt
 
+from sklearn.ensemble import RandomForestClassifier
+
 
 np.random.seed(42)
 X = np.random.randint(0, 2, size=(100, 12))  # 100 примеров, 12 бинарных признаков
@@ -41,4 +43,12 @@ plt.plot(history.history['val_loss'], label='Validation Loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
+
+
+# Случайный лес
+rf = RandomForestClassifier(n_estimators=100)
+rf.fit(X_train, y_train)
+y_pred_rf = rf.predict(X_test)
+print("Random Forest Accuracy:", accuracy_score(y_test, y_pred_rf))
+
 plt.show()
