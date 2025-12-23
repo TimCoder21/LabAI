@@ -38,18 +38,16 @@ y_pred = (model.predict(X_test) > 0.5).astype("int32")
 print("Accuracy:", accuracy_score(y_test, y_pred))
 
 # График изменения функции ошибки
-plt.plot(history.history['loss'], label='Training Loss')
-plt.plot(history.history['val_loss'], label='Validation Loss')
-plt.xlabel('Epochs')
-plt.ylabel('Loss')
-plt.legend()
 
 rf = RandomForestClassifier(n_estimators=100)
 rf.fit(X_train, y_train)
 y_pred_rf = rf.predict(X_test)
 print("Random Forest Accuracy:", accuracy_score(y_test, y_pred_rf))
 
-fpr, tpr, thresholds = roc_curve(y_test, history)
+y_test_b = np.argmax(y_test, axis=1)
+history = y_pred[:, 1]
+
+fpr, tpr = roc_curve(y_test_b, history)
 plt.figure(1, figsize=(8, 6))
 plt.plot(fpr, tpr, marker='o')
 plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
