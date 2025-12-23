@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, roc_curve
 from sklearn.datasets import make_moons
 import matplotlib.pyplot as plt
 
@@ -44,11 +44,19 @@ plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
 
-
-# Случайный лес
 rf = RandomForestClassifier(n_estimators=100)
 rf.fit(X_train, y_train)
 y_pred_rf = rf.predict(X_test)
 print("Random Forest Accuracy:", accuracy_score(y_test, y_pred_rf))
 
+fpr, tpr, thresholds = roc_curve(y_test, history)
+plt.figure(1, figsize=(8, 6))
+plt.plot(fpr, tpr, marker='o')
+plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+plt.xlim([0.0, 1])
+plt.ylim([0.0, 1])
+plt.xlabel('FPR')
+plt.ylabel('TPR')
+plt.title('ROC Curve')
+plt.grid(True)
 plt.show()
