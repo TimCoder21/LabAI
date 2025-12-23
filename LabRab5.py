@@ -1,4 +1,5 @@
 import numpy as np
+import sns
 import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import train_test_split
@@ -47,8 +48,8 @@ print("Random Forest Accuracy:", accuracy_score(y_test, y_pred_rf))
 y_test_b = np.argmax(y_test, axis=1)
 history = y_pred[:, 1]
 
-fpr, tpr = roc_curve(y_test_b, history)
-plt.figure(1, figsize=(8, 6))
+fpr, tpr,t = roc_curve(y_test_b, history)
+plt.figure(2, figsize=(8, 6))
 plt.plot(fpr, tpr, marker='o')
 plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
 plt.xlim([0.0, 1])
@@ -57,4 +58,12 @@ plt.xlabel('FPR')
 plt.ylabel('TPR')
 plt.title('ROC Curve')
 plt.grid(True)
+
+cm = confusion_matrix(y_test_b, history)
+plt.figure(3,figsize=(4, 3))
+sns.heatmap(cm, annot=True, fmt='d', cmap='bwr')
+plt.title('Confusion matrix')
+plt.ylabel('True label')
+plt.xlabel('Predicted label')
+plt.tight_layout()
 plt.show()
