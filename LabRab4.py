@@ -5,20 +5,18 @@ from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, Gradien
 import matplotlib.pyplot as plt
 
 
-df = pd.read_csv("processed_titanic.csv")
+df = pd.read_csv("processed_diadetes.csv")
 
-
-X = df.drop(['Transported'], axis=1)
-y = df['Transported']
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+X = df.drop(['Outcome'], axis=1)
+y = df['Outcome']
 
 rf_model = RandomForestClassifier(oob_score=True,random_state=42)
-rf_model.fit(X_train, y_train)
-y_pred_rf = rf_model.predict(X_test)
+rf_model.fit(X, y)
+y_pred_rf = rf_model.predict(X)
 print("Random Forest")
-print("OOB Score: ",rf_model.oob_score_)
-print("Test Accuracy: ",accuracy_score(y_test, y_pred_rf), '\n')
+print("OOB Score: ",rf_model.oob_score_, '\n')
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 ada_model = AdaBoostClassifier(random_state=42)
 ada_model.fit(X_train, y_train)
@@ -34,7 +32,6 @@ print("Test Accuracy: ", accuracy_score(y_test, y_pred_gb))
 
 fig, ax = plt.subplots(figsize=(8, 6))
 
-RocCurveDisplay.from_estimator(rf_model, X_test, y_test, ax=ax, name='Random Forest')
 RocCurveDisplay.from_estimator(ada_model, X_test, y_test, ax=ax, name='AdaBoost')
 RocCurveDisplay.from_estimator(gb_model, X_test, y_test, ax=ax, name='Gradient Boosting')
 plt.ylabel('TPR')
