@@ -6,6 +6,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, roc_curve
 from sklearn.datasets import make_moons
+from sklearn.metrics import confusion_matrix
+
 import matplotlib.pyplot as plt
 
 from sklearn.ensemble import RandomForestClassifier
@@ -60,6 +62,7 @@ plt.title('ROC Curve')
 plt.grid(True)
 
 cm = confusion_matrix(y_test_b, history)
+print(cm)
 plt.figure(3,figsize=(4, 3))
 sns.heatmap(cm, annot=True, fmt='d', cmap='bwr')
 plt.title('Confusion matrix')
