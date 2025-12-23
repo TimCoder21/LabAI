@@ -4,29 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a501e997-7581-48bc-af4e-fe06cf386c2d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/LabAI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LabRab1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LabRab2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/processed_titanic.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/.ipynb_checkpoints/sample_submission-checkpoint.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/.ipynb_checkpoints/test-checkpoint.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/.ipynb_checkpoints/train-checkpoint.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/sample_submission.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-titanic/train.csv" afterDir="false" />
+    <list default="true" id="a501e997-7581-48bc-af4e-fe06cf386c2d" name="Changes" comment="еще правка мелкая">
+      <change beforePath="$PROJECT_DIR$/LabRab4.py" beforeDir="false" afterPath="$PROJECT_DIR$/LabRab4.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Lab3" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -37,16 +35,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.LabRab1.executor": "Run",
-    "Python.LabRab2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.LabRab1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LabRab2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LabRab4.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#4 on Lab4&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -62,6 +61,47 @@
       <option name="presentableId" value="Default" />
       <updated>1762464565934</updated>
     </task>
+    <task id="LOCAL-00001" summary="классификация методом деревьев">
+      <option name="closed" value="true" />
+      <created>1763753264412</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763753264412</updated>
+    </task>
+    <task id="LOCAL-00002" summary="классификация методом градиентного бустинга и AdaBoost">
+      <option name="closed" value="true" />
+      <created>1763754431456</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763754431456</updated>
+    </task>
+    <task id="LOCAL-00003" summary="еще правка мелкая">
+      <option name="closed" value="true" />
+      <created>1763758342233</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763758342233</updated>
+    </task>
+    <task id="LOCAL-00004" summary="еще правка мелкая">
+      <option name="closed" value="true" />
+      <created>1763758435234</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1763758435234</updated>
+    </task>
+    <task id="LOCAL-00005" summary="еще правка мелкая">
+      <option name="closed" value="true" />
+      <created>1763758812322</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763758812322</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -74,5 +114,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="классификация методом деревьев" />
+    <MESSAGE value="классификация методом градиентного бустинга и AdaBoost" />
+    <MESSAGE value="еще правка мелкая" />
+    <option name="LAST_COMMIT_MESSAGE" value="еще правка мелкая" />
   </component>
 </project>
